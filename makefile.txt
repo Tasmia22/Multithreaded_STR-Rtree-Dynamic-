@@ -1,0 +1,71 @@
+# ---------- Config ----------
+MODE ?= release
+ALIAS_OK ?= 0
+
+# ---------- Tools ----------
+CC := gcc
+
+# ---------- Sources ----------
+SRCS := $(wildcard *.c)
+OBJS := $(SRCS:.c=.o)
+DEPS := rtree.h
+TARGET := rtree_multithreaded
+
+# ---------- Common flags ----------
+CSTD     := -std=c11
+WARN     := -Wall -Wextra -Wshadow -Wundef
+CPU      := -march=native
+TUNING   := -funroll-loops -fomit-frame-pointer -pipe
+SECTS    := -ffunction-sections -fdata-sections
+THREADS  := -pthread
+
+ifeq ($(ALIAS_OK),1)
+  ALIAS := -fstrict-aliasing
+else
+  ALIAS := -fno-strict-aliasing
+endif
+
+# Mode
+ifeq ($(MODE),debug)
+  OPT   := -O0 -g
+  LTO   :=
+  DEF   :=
+else
+  OPT   := -O3
+  LTO   := -flto
+  DEF   := -DNDEBUG
+endif
+
+# ---------- Platform-specific linker flags ----------
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Darwin)
+  GCSECT := -Wl,-dead_strip
+else
+  GCSECT := -Wl,--gc-sections
+endif
+
+CFLAGS  := $(CSTD) $(WARN) $(OPT) $(CPU) $(TUNING) $(SECTS) $(ALIAS) $(DEF) $(THREADS) $(LTO)
+LDFLAGS := $(THREADS) $(LTO) $(GCSECT)
+LDLIBS  := -lm
+
+# ---------- Rules ----------
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CC) -o $@ $(OBJS) $(LDFLAGS) $(LDLIBS)
+
+%.o: %.c $(DEPS)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJS) $(TARGET)
+
+test: $(TARGET)
+	./$(TARGET)
+
+print-flags:
+	@echo "CFLAGS  = $(CFLAGS)"
+	@echo "LDFLAGS = $(LDFLAGS)"
+	@echo "LDLIBS  = $(LDLIBS)"
+
+.PHONY: all clean test print-flags
