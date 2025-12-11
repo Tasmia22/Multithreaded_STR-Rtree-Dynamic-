@@ -25,7 +25,8 @@ The data query and log directories are not tracked in the repository. You must c
 ## Building
 
 1. Open a terminal in the `Multithreaded_STRRtree_Dymamic` directory.
-2. Run the command  
+2. Download the data and query and keep these two folder in the same directory
+3. Run the command  
 
    `make`
 
@@ -109,6 +110,7 @@ During a run the program prints
 6. Sequential overlap count and query time  
 7. Parallel overlap count query time thread count and speedup  
 8. A check mark if sequential and parallel totals match or a warning if they differ
+
 
 
 
