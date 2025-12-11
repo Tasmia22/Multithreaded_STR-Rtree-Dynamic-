@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project implements a main memory R tree for rectangle data and evaluates query performance in both sequential and multithreaded settings.
+This project implements a main memory R-tree for rectangle data and evaluates query performance in both sequential and multithreaded settings.
 
 The code builds an R-tree using a Sort-Tile-Recursive style construction and then executes a set of range queries. Each query counts the number of rectangles that overlap the query rectangle. The same queries are executed sequentially and with a thread pool so that speedup can be measured.
 
@@ -20,7 +20,7 @@ The GitHub repository contains only the source files to keep the repository smal
 * `zordering.c` Z order sorting helpers  
 * `makefile` build script  
 
-The data query and log directories are not tracked in the repository. You must create them locally before running the program as described next.
+The data query and log directories are not tracked in the repository. You must create them locally before running the program as described next. Link: https://drive.google.com/drive/folders/1-ZI3Ir65Uu5gj7Jk-a0oncUk11hB5HvP?usp=sharing
 
 ## Building
 
