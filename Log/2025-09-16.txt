@@ -1,0 +1,88 @@
+
+=== Run @ 2025-09-16 11:30:02 ===
+Dataset: 8419312 rects, 420967 queries
+Threads used: 8
+Sequential Time: 82.24 ms
+Parallel Time:   41.81 ms
+Speedup: 1.97x
+-------------------------
+
+=== Run @ 2025-09-16 11:31:29 ===
+Dataset: 8419312 rects, 84194 queries
+Threads used: 8
+Sequential Time: 16.21 ms
+Parallel Time:   8.62 ms
+Speedup: 1.88x
+-------------------------
+
+=== Run @ 2025-09-16 11:48:47 ===
+Dataset: 8419312 rects, 2104829 queries
+Threads used: 8
+Sequential Time: 406.63 ms
+Parallel Time:   256.16 ms
+Speedup: 1.59x
+-------------------------
+
+=== Run @ 2025-09-16 11:51:41 ===
+Dataset: 8419312 rects, 420967 queries
+Threads used: 8
+Sequential Time: 58.07 ms
+Parallel Time:   41.47 ms
+Speedup: 1.40x
+-------------------------
+
+=== Run @ 2025-09-16 11:53:07 ===
+Dataset: 8419312 rects, 84194 queries
+Threads used: 8
+Sequential Time: 11.42 ms
+Parallel Time:   8.44 ms
+Speedup: 1.35x
+-------------------------
+
+=== Run @ 2025-09-16 11:56:30 ===
+Dataset: 6000000 rects, 60001 queries
+Threads used: 8
+Sequential Time: 8.29 ms
+Parallel Time:   6.07 ms
+Speedup: 1.37x
+-------------------------
+
+=== Run @ 2025-09-16 12:00:04 ===
+Dataset: 6000000 rects, 300001 queries
+Threads used: 8
+Sequential Time: 42.53 ms
+Parallel Time:   31.21 ms
+Speedup: 1.36x
+-------------------------
+
+=== Run @ 2025-09-16 12:37:38 ===
+Dataset: 6000000 rects, 600001 queries
+Threads used: 8
+Sequential Time: 82.85 ms
+Parallel Time:   49.48 ms
+Speedup: 1.67x
+-------------------------
+
+=== Run @ 2025-09-16 12:47:16 ===
+Dataset: 6000000 rects, 1500001 queries
+Threads used: 8
+Sequential Time: 207.81 ms
+Parallel Time:   121.56 ms
+Speedup: 1.71x
+-------------------------
+
+=== Run @ 2025-09-16 13:13:06 ===
+Dataset: 8419312 rects, 841932 queries
+Threads used: 8
+Sequential Time: 113.84 ms
+Parallel Time:   65.14 ms
+Speedup: 1.75x
+-------------------------
+
+=== Run @ 2025-09-16 13:28:37 ===
+Dataset: 8419312 rects, 2104829 queries
+Threads used: 8
+Sequential Time: 288.42 ms
+Parallel Time:   299.24 ms
+Speedup: 0.96x
+-------------------------
